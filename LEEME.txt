@@ -1,0 +1,32 @@
+SimuESP Studio - proyecto Android (WebView)
+
+OPCION A - Android Studio
+1. Abre Android Studio > Open > selecciona esta carpeta.
+2. Espera la sincronizacion de Gradle.
+3. Build > Build APK(s). Sale en app/build/outputs/apk/debug/app-debug.apk
+
+OPCION B - Sin instalar nada (GitHub Actions)
+1. Crea un repositorio en GitHub y sube el contenido de esta carpeta.
+2. Pestana Actions > "Build APK" > Run workflow.
+3. Descarga el artefacto "SimuESP-apk" (contiene app-debug.apk).
+
+Para actualizar la app: reemplaza app/src/main/assets/index.html
+
+
+=== VERSION PARA WINDOWS (Electron) ===
+Usa exactamente la misma app (index.html) que el APK.
+
+OPCION A - Sin instalar nada (GitHub Actions)
+1. Sube TODO el contenido de esta carpeta a tu repositorio de GitHub (incluida la carpeta "windows" y ".github").
+2. Pestana Actions > "Build Windows" > Run workflow.
+3. Cuando termine, descarga el artefacto "SimuESP-windows". Dentro hay:
+   - SimuESP-Studio-<version>-x64.exe  (instalador, o el portable: no se instala)
+   Si salen dos .exe: el que dice "Setup" o instalador crea acceso directo; el otro es portable (doble clic y listo).
+
+OPCION B - En tu PC con Node.js 20
+1. Copia app/src/main/assets/index.html a la carpeta windows/
+2. En la carpeta windows: npm install
+3. Probar: npm start    |  Generar .exe: npm run dist  (sale en windows/dist)
+
+IMPORTANTE: despues de cambiar index.html, el workflow lo copia solo; no hace falta tocar la carpeta windows.
+Windows puede mostrar "Windows protegió su PC" porque el .exe no esta firmado: Mas informacion > Ejecutar de todas formas.
