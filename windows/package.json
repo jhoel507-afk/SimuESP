@@ -21,14 +21,17 @@
       "target": [
         { "target": "nsis", "arch": ["x64"] },
         { "target": "portable", "arch": ["x64"] }
-      ],
-      "artifactName": "SimuESP-Studio-${version}-${arch}.${ext}"
+      ]
     },
     "nsis": {
+      "artifactName": "SimuESP-Studio-Instalador-${version}.${ext}",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true
+    },
+    "portable": {
+      "artifactName": "SimuESP-Studio-Portable-${version}.${ext}"
     }
   }
 }
